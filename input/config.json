@@ -1,0 +1,62 @@
+{
+	"control mode (1:pure_pursuit, 2:pid, 3:mpc, 4:mpc_no_constraints)": [
+	    1,
+	    2,
+	    3
+	],
+	"output video": {
+	    "save (0:no, 1:yes)": 1,
+    	"frame rate": 60,
+    	"thinning out interval (1: not thinning out)": 1,
+    	"format (.mp4 or .gif)": ".mp4"
+	},
+	"simulation":{ 
+    	"initial position (x, y, yaw, delta)":[
+    	    0,
+    	    0.5,
+    	    0,
+    	    0
+    	],
+    	"total time [s]": 35.0,
+    	"time step [s]": 0.002
+	},
+	"velocity (ref) [km/h]": 30,
+	"dynamics model":{
+	    "tau [s]": 0.27,
+	    "wheelbase [m]": 2.69,
+	    "steering limit [deg]": 30,
+	    "velocity (max) [km/h]": 36,
+	    "velocity (min) [km/h]": -18,
+	    "input delay [s]": 0.24,
+	    "control dt [s]":  0.03,
+	    "measurement noise ([m], [m], [deg], [deg])": [
+	        0.1,
+	        0.1,
+	        1.0,
+	        0.5
+	    ],
+	    "steering steady state error [deg]": 1
+	},
+	"pure pursuit":{
+	    "lookahead [m]": 8.0
+	},
+	"mpc":{
+	    "constraints (0:off, 1:on)": 0,
+	    "dt": 0.1,
+	    "n":  30,
+	    "constraint steering [deg]": 30,
+	    "constraint steer rate [deg]": 280,
+	    "model dimension": 3,
+	    "Q (function)": "np.diag([1,2])",
+	    "R": 0.5
+	},
+	"mpc2":{
+	    "dt": 0.2,
+	    "n":  10,
+	    "constraint steering [deg]": 40,
+	    "model dimension": 4,
+	    "Q (function)": "np.diag([1,1,0])",
+	    "R": 0.05
+	}
+}
+
