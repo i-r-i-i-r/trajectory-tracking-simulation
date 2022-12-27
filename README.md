@@ -4,6 +4,6 @@
 # Note
 このプログラムはTakaHoribe様のMATLABコード(<https://github.com/TakaHoribe/trajectory_tracking_simulation>)をベースに、Pythonに書き換えたものです。
 
-（より正確には別の機能も少し足したりしています）
+（より正確には別の機能も少し減らしたり足したりしています）
 
 まだコードが散らかっているので、いずれ整理します。
